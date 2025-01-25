@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://<postgresql-service-name>:5432/mydatabase
+    username: myuser
+    password: mypassword
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  flyway:
+    enabled: true

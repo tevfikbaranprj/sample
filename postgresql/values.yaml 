@@ -1,0 +1,23 @@
+global:
+  postgresql:
+    auth:
+      postgresPassword: mypassword # PostgreSQL admin şifresi
+postgresql:
+  auth:
+    username: myuser               # Veritabanı kullanıcı adı
+    password: mypassword           # Veritabanı kullanıcı şifresi
+    database: mydatabase           # Varsayılan veritabanı ismi
+  primary:
+    service:
+      type: LoadBalancer           # PostgreSQL'e dışarıdan erişim sağlamak için LoadBalancer türü
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "500m"
+      limits:
+        memory: "1Gi"
+        cpu: "1000m"
+  persistence:
+    enabled: true                  # Verilerin kalıcı olması için Persistence Volume aktif
+    size: 10Gi                     # Disk boyutu
+    storageClass: standard         # Storage Class adı (cluster'da kullanılan storage türü)
