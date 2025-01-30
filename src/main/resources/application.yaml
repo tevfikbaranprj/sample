@@ -1,11 +1,27 @@
 spring:
   datasource:
-    url: jdbc:postgresql://<postgresql-service-name>:5432/mydatabase
-    username: myuser
-    password: mypassword
+    ap1-db:
+      url: jdbc:postgresql://<postgresql-service-name>:5432/mydatabase
+      username: myuser
+      password: mypassword
+      driver-class-name: org.postgresql.Driver
+    api2-db:
+      url: jdbc:postgresql://<postgresql-service-name>:5432/mydatabase2
+      username: myuser
+      password: mypassword
+      driver-class-name: org.postgresql.Driver
+    api3-db:
+      url: jdbc:postgresql://<postgresql-service-name>:5432/mydatabase3
+      username: myuser
+      password: mypassword
+      driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
     show-sql: true
   flyway:
     enabled: true
