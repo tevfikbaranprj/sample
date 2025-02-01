@@ -1,11 +1,11 @@
-package de.tvbr.entities.repositories.api1;
+package de.tvbr.entities.api3;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="api1_data")
+@Table(name="api3_data")
 
-public class Api1Data {
+public class Api3Data {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
