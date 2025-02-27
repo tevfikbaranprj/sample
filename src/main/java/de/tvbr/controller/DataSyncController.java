@@ -17,6 +17,6 @@ public class DataSyncController {
     @GetMapping("/sync")
     public Mono<String> triggerSync () {
         dataSyncService.syncALlData();
-        return Mono.just("Veri senctonizsyonu basladi ");
+        return Mono.just("Veri senkronizasyonu basladi ");
     }
 }
